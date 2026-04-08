@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -937,7 +938,7 @@ return { init, getProfile, saveProfile, logout, requireLogin };
 
 
 <!-- ── PVE STORAGE + AUTH ── -->
-<script type="module">
+<script>
 // ═══════════════════════════════════════════════════════════════
 // PvE STORAGE — Firebase Realtime Database adapter
 // Replaces window.storage across all pages
@@ -1091,6 +1092,10 @@ const PveStorage = (() => {
   init();
 
   return { init, install, setUser, get, set, delete: del, list, onReady };
+})();
+window.PveStorage = PveStorage;
+const PveStorage2 = PveStorage; // alias suppress re-declaration
+(()=>{
 })();
 
 
@@ -1397,6 +1402,8 @@ const PveAuth = (() => {
 
   return { init, getProfile, saveProfile, logout, requireLogin, _connect, _shortAddr };
 })();
+window.PveAuth = PveAuth;
+window.PveStorage = PveStorage;
 
 
 
