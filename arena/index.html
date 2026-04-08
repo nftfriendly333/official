@@ -1235,160 +1235,183 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.92);
-    background: var(--bg2);
-    border: 2px solid var(--gold3);
-    border-radius: 8px;
-    padding: 1.6rem 1.8rem;
+    background: #0d0b08;
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 12px;
+    padding: 1.6rem 1.4rem;
     z-index: 1001;
     width: 92vw;
-    max-width: 620px;
+    max-width: 640px;
     max-height: 88vh;
     overflow-y: auto;
-    box-shadow: 0 0 60px rgba(201,168,76,0.2), 0 20px 60px black;
+    box-shadow: 0 0 80px rgba(201,168,76,0.12), 0 24px 80px rgba(0,0,0,0.9);
     animation: popupIn 0.3s ease forwards;
   }
 
   .lb-popup h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--gold);
     text-align: center;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.3rem;
-    text-shadow: 0 0 20px rgba(201,168,76,0.4);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 0 24px rgba(201,168,76,0.5);
   }
 
   .lb-subtitle {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     color: var(--text3);
     font-style: italic;
     margin-bottom: 1.2rem;
+    letter-spacing: 0.06em;
   }
 
   .lb-tabs {
     display: flex;
     gap: 0.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    background: #070604;
+    border-radius: 6px;
+    padding: 4px;
   }
 
   .lb-tab {
     flex: 1;
-    padding: 0.4rem 0.3rem;
+    padding: 0.45rem 0.3rem;
     font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 0.08em;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text3);
+    background: transparent;
+    border: none;
+    color: #6a5040;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 4px;
     transition: all 0.2s;
     text-align: center;
   }
-  .lb-tab.active { background: rgba(201,168,76,0.1); border-color: var(--gold3); color: var(--gold); }
-  .lb-tab:hover:not(.active) { border-color: var(--border2); color: var(--text2); }
+  .lb-tab.active { background: rgba(201,168,76,0.15); color: var(--gold); box-shadow: inset 0 0 0 1px rgba(201,168,76,0.3); }
+  .lb-tab:hover:not(.active) { color: var(--text2); background: rgba(255,255,255,0.04); }
 
   .lb-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 3px;
     font-size: 0.85rem;
+  }
+
+  .lb-table thead tr {
+    background: transparent;
   }
 
   .lb-table th {
     font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    color: var(--gold3);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    color: rgba(201,168,76,0.5);
     text-align: left;
-    padding: 0.4rem 0.6rem;
-    border-bottom: 1px solid var(--border2);
+    padding: 0.3rem 0.8rem;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
     text-transform: uppercase;
   }
 
-  .lb-table td {
-    padding: 0.55rem 0.6rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    color: var(--text2);
-    vertical-align: middle;
+  .lb-table tbody tr {
+    background: #141008;
+    transition: background 0.15s;
   }
+  .lb-table tbody tr:nth-child(even) { background: #100e06; }
+  .lb-table tbody tr:hover { background: #1e180a; }
 
-  .lb-table tr:last-child td { border-bottom: none; }
-
-  .lb-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .lb-table td {
+    padding: 0.65rem 0.8rem;
+    color: #c0a880;
+    vertical-align: middle;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+  }
+  .lb-table tbody tr td:first-child { border-radius: 6px 0 0 6px; }
+  .lb-table tbody tr td:last-child  { border-radius: 0 6px 6px 0; }
 
   .lb-rank {
     font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    color: var(--text3);
-    width: 2rem;
+    font-size: 0.82rem;
+    color: #6a5040;
+    width: 2.4rem;
     text-align: center;
   }
-
-  .lb-rank-1 { color: #f59e0b; font-size: 1rem; }
-  .lb-rank-2 { color: #94a3b8; font-size: 0.95rem; }
-  .lb-rank-3 { color: #b45309; font-size: 0.9rem; }
+  .lb-rank-1 { color: #f59e0b; font-size: 1.05rem; text-shadow: 0 0 10px rgba(245,158,11,0.5); }
+  .lb-rank-2 { color: #cbd5e1; font-size: 1rem; }
+  .lb-rank-3 { color: #cd7f32; font-size: 0.95rem; }
 
   .lb-name {
     font-family: 'Cinzel', serif;
-    font-size: 0.82rem;
-    color: var(--white);
+    font-size: 0.84rem;
+    color: #e8d5b0;
+    letter-spacing: 0.04em;
   }
-  .lb-name.is-you { color: var(--gold); }
-  .lb-name.is-you::after { content: ' (You)'; font-size: 0.65rem; color: var(--gold3); }
+  .lb-name.is-you { color: var(--gold); text-shadow: 0 0 8px rgba(201,168,76,0.4); }
+  .lb-name.is-you::after { content: ' ✦ You'; font-size: 0.6rem; color: rgba(201,168,76,0.6); letter-spacing: 0.1em; }
 
   .lb-score {
     font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    color: var(--green2);
+    font-size: 0.88rem;
+    color: #4ade80;
     text-align: right;
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
 
-  .lb-skin { font-size: 1.1rem; }
+  .lb-skin { font-size: 1.15rem; line-height: 1; }
 
   .lb-empty {
     text-align: center;
     color: var(--text3);
     font-style: italic;
-    padding: 1.5rem;
-    font-size: 0.85rem;
+    padding: 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
   }
 
-  .lb-you-row td { background: rgba(201,168,76,0.04); }
+  .lb-you-row td {
+    background: rgba(201,168,76,0.06) !important;
+    border-top: 1px solid rgba(201,168,76,0.12) !important;
+    border-bottom: 1px solid rgba(201,168,76,0.12) !important;
+  }
 
   .lb-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     padding-top: 0.8rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(201,168,76,0.1);
     flex-wrap: wrap;
     gap: 0.5rem;
   }
 
   .lb-refresh-info {
-    font-size: 0.72rem;
-    color: var(--text3);
+    font-size: 0.68rem;
+    color: #6a5040;
     font-style: italic;
+    letter-spacing: 0.04em;
   }
 
   .btn-lb-close {
-    background: linear-gradient(135deg, #1e1812, #2a2016);
-    border: 1px solid var(--gold3);
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
     color: var(--gold);
     font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    padding: 0.4rem 1rem;
-    border-radius: 3px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    padding: 0.45rem 1.2rem;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
   }
-  .btn-lb-close:hover { border-color: var(--gold); box-shadow: 0 0 10px rgba(201,168,76,0.2); }
+  .btn-lb-close:hover { background: rgba(201,168,76,0.16); border-color: var(--gold); box-shadow: 0 0 12px rgba(201,168,76,0.2); }
 
   .btn-leaderboard {
-    background: linear-gradient(135deg, #1a1408, #2e2010);
-    border: 1px solid var(--gold3);
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
     color: var(--gold);
     font-family: 'Cinzel', serif;
     font-size: 0.82rem;
@@ -1398,14 +1421,16 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-  .btn-leaderboard:hover { background: linear-gradient(135deg,#2e2010,#4a3418); border-color:var(--gold); box-shadow:0 0 12px rgba(201,168,76,0.2); }
+  .btn-leaderboard:hover { background: rgba(201,168,76,0.16); border-color: var(--gold); box-shadow: 0 0 14px rgba(201,168,76,0.25); }
 
   .lb-loading {
     text-align: center;
-    color: var(--text3);
+    color: #6a5040;
     font-style: italic;
-    padding: 1.5rem;
-    font-size: 0.85rem;
+    padding: 2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    animation: pulse 1.5s ease-in-out infinite;
   }
 
 
@@ -1725,13 +1750,13 @@
 #site-nav .sn-links a.sn-dashboard.sn-active{color:#5cb85c;border-color:rgba(92,184,92,0.3);background:rgba(92,184,92,0.07);}
 </style>
 <nav id="site-nav">
-  <a class="sn-logo" href="/">PvE <span>Hub</span></a>
+  <a class="sn-logo" href="index.html">PvE <span>Hub</span></a>
   <div class="sn-links">
-    <a href="/" class="sn-home">Home</a>
-    <a href="/arena/" class="sn-arena sn-active">⚔ Iron Arena</a>
-    <a href="/sow/" class="sn-reap">🌾 Reap What You Sow</a>
-    <a href="/trade/" class="sn-trade">📊 Trade Together</a>
-    <a href="/dashboard/" class="sn-dashboard">◈ Dashboard</a>
+    <a href="index.html" class="sn-home">Home</a>
+    <a href="iron-arena.html" class="sn-arena sn-active">⚔ Iron Arena</a>
+    <a href="reap.html" class="sn-reap">🌾 Reap What You Sow</a>
+    <a href="trade.html" class="sn-trade">📊 Trade Together</a>
+    <a href="dashboard.html" class="sn-dashboard">◈ Dashboard</a>
   </div>
 </nav>
 
@@ -2823,19 +2848,13 @@ function clearWallet() {
 
 // Block the fight button until wallet is saved
 function updateFightButtonWalletGate() {
+  // Wallet is set automatically from MetaMask login — always enable fight button
   const fightBtn = document.getElementById('btn-fight');
   if (!fightBtn) return;
-  if (!shopState.walletAddress) {
-    fightBtn.disabled = true;
-    fightBtn.title = 'Save your wallet address in the XP Shop → Name tab first';
-    fightBtn.style.opacity = '0.4';
-    fightBtn.style.cursor  = 'not-allowed';
-  } else {
-    fightBtn.disabled = false;
-    fightBtn.title = '';
-    fightBtn.style.opacity = '';
-    fightBtn.style.cursor  = '';
-  }
+  fightBtn.disabled = false;
+  fightBtn.title = '';
+  fightBtn.style.opacity = '';
+  fightBtn.style.cursor  = '';
 }
 
 function renderSkinGrid() {
@@ -4380,31 +4399,59 @@ window.PveStorage = PveStorage;
 
 
 
-(async () => {
-  await PveAuth.init('arena');
-  const profile = await PveAuth.requireLogin();
-  if (profile.address && !shopState.walletAddress) {
-    shopState.walletAddress = profile.address;
-  }
-  const loaded = await loadGame();
-  const _skinEmoji = SKINS[shopState.equippedSkin]?.emoji || '🧙';
-  await PveAuth.saveProfile({ skin: _skinEmoji });
+// Phase 1: Render game immediately so it's playable right away
+(function() {
   renderSkills();
   resetPlayerStats();
   updateXPDisplay();
   renderSkinGrid();
-  if (loaded) showSaveToast('⚔ Progress restored!', '#7a5c1e');
-  claimGuildXP();
-  renderWalletDisplay();
   updateFightButtonWalletGate();
   initCooldownTimers();
-  setTimeout(() => {
-    const banner = document.getElementById('firebase-banner');
-    if (banner && window._fbReady) {
-      banner.classList.add('connected');
-      banner.innerHTML = '<span class="fb-icon">✅</span><strong>Firebase connected</strong> — Leaderboard & Guilds are live!';
+})();
+
+// Phase 2: Auth + cloud save in background — doesn't block gameplay
+(async () => {
+  try {
+    await PveAuth.init('arena');
+    const profile = await PveAuth.requireLogin();
+
+    // Set wallet from MetaMask address
+    if (profile.address) {
+      shopState.walletAddress = profile.address;
+      renderWalletDisplay();
+      updateFightButtonWalletGate();
     }
-  }, 1500);
+
+    // Load cloud save — overrides local defaults if save exists
+    const loaded = await loadGame();
+    if (loaded) {
+      renderSkills();
+      resetPlayerStats();
+      updateXPDisplay();
+      renderSkinGrid();
+      renderWalletDisplay();
+      updateFightButtonWalletGate();
+      showSaveToast('⚔ Progress restored!', '#7a5c1e');
+      claimGuildXP();
+    }
+
+    // Sync skin to profile
+    const _skinEmoji = SKINS[shopState.equippedSkin]?.emoji || '🧙';
+    await PveAuth.saveProfile({ skin: _skinEmoji });
+
+    // Firebase banner
+    setTimeout(() => {
+      const banner = document.getElementById('firebase-banner');
+      if (banner && window._fbReady) {
+        banner.classList.add('connected');
+        banner.innerHTML = '<span class="fb-icon">✅</span><strong>Firebase connected</strong> — Leaderboard & Guilds are live!';
+      }
+    }, 1500);
+
+  } catch(e) {
+    // Auth failed or cancelled — game still playable, just no cloud save
+    console.warn('PvE Auth:', e?.message || e);
+  }
 })();
 </script>
 </body>
